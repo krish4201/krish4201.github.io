@@ -1,0 +1,75 @@
+
+/* default */
+
+*{
+    border: none;
+    /* margin:0; */
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: rgb(184, 48, 48);
+}
+
+.user-details p {
+    background-color: white;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    border-bottom: 2px solid rgb(184, 48, 48);
+    background-color: rgb(225, 222, 222);
+}
+
+button {
+    padding: 10px;
+    width: 50%;
+    background-color: rgb(184, 48, 48);
+    color: white;
+}
+
+.header,.login-details ,.footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.header {
+    padding-top: 50px;
+}
+
+.logo-img {
+    width: 20%;
+    border: 1px solid red;
+    background-color: white;
+}
+
+/* login details */
+
+
+.user-details {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 40px;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.password{
+    margin-bottom: 20px;
+}
+
+/* footer */
+
+.footer {
+    align-content: end;
+}
+
+.footer p {
+    margin: 0;
+    color: white;
+}
