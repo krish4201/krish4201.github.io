@@ -1,0 +1,107 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-weight:bold;
+}
+
+body{
+    font-size: 20px;
+}
+
+.grid_setup{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.flex_setup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(222, 219, 219);
+}
+
+.Details{
+    width: 80%;
+    background-color: white;
+    padding: 10px;
+    margin: 70px;
+    border-radius: 5px;
+}
+
+button{
+    width: 150px;
+}
+
+select {
+    height: 35px;
+    width: 150px;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Submit-button{
+    padding-top: 30px;
+    display: grid;
+    justify-content: center;
+    height:40px;
+
+}
+
+button{
+    font-size: 20px;
+    font-weight: none;
+    border: none;
+    border-radius: 5px;
+    background-color: lightblue;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgb(208, 205, 205);
+}
+
+.Leave{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    column-gap: 80px;
+    padding: 20px 20px 0px 20px ;
+}
+
+.leave-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    border: 1px solid black;
+    height: 140px;
+    text-align: center;
+}
+
+.Medical-Leave{
+    background-color: rgb(124, 124, 254);
+}
+
+.General-Leave {
+    background-color: rgb(1, 180, 1);
+}
+
+.Leave-Taken{
+    background-color: rgb(239, 152, 152);
+}
+
+.Submit-button{
+    padding-bottom: 25px;
+}
+
+/* Media for Mobile */
+@media (max-width:500px) {
+
+.Leave{
+    display: grid;
+    grid-template-columns: 230px ;
+    justify-content: center;
+    row-gap: 25px;
+}
+}

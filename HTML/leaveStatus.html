@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      margin-top: 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    .filter-container {
+      margin-bottom: 20px;
+    }
+    .filter-container select {
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .filter-container label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Leave Status</h2>
+    <div class="filter-container">
+      <label for="leaveStatus">Filter by Status:</label>
+      <select id="leaveStatus">
+        <option value="all">All</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <table id="leaveTable">
+      <thead>
+        <tr>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Leave items will be populated here dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Sample data for demonstration
+    const leaves = [
+      { startDate: '2024-02-01', endDate: '2024-02-03', reason: 'Vacation', status: 'approved' },
+      { startDate: '2024-02-05', endDate: '2024-02-07', reason: 'Sick Leave', status: 'rejected' }
+      // Add more leaves as needed
+    ];
+
+    const leaveTable = document.getElementById('leaveTable');
+    const leaveStatusFilter = document.getElementById('leaveStatus');
+
+    // Function to render leave items
+    function renderLeaveItems(leaves) {
+      const leaveRows = leaves.map(leave => `
+        <tr>
+          <td>${leave.startDate}</td>
+          <td>${leave.endDate}</td>
+          <td>${leave.reason}</td>
+          <td>${leave.status}</td>
+        </tr>
+      `).join('');
+
+      leaveTable.querySelector('tbody').innerHTML = leaveRows;
+    }
+
+    // Initial rendering
+    renderLeaveItems(leaves);
+
+    // Event listener for filter change
+    leaveStatusFilter.addEventListener('change', function() {
+      const selectedStatus = this.value;
+      let filteredLeaves = [];
+
+      if (selectedStatus === 'all') {
+        filteredLeaves = leaves;
+      } else {
+        filteredLeaves = leaves.filter(leave => leave.status === selectedStatus);
+      }
+
+      renderLeaveItems(filteredLeaves);
+    });
+  </script>
+</body>
+</html>
